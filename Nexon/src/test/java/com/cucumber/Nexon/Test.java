@@ -13,7 +13,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchWindowException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -32,6 +31,9 @@ public class Test {
 	  public static void setUp() throws Exception {
 		DesiredCapabilities cap = DesiredCapabilities.internetExplorer();		
 		WebDriver driver = new RemoteWebDriver(new URL("http://localhost:5555/wd/hub"), cap);
+		cap.setBrowserName("internetExplorer");
+		cap.setVersion("10");
+		
 //		System.setProperty("webdriver.ie.driver", "C:/Test/IEDriverServer.exe");	
 //		driver = new InternetExplorerDriver();
 	    driver.manage().window().maximize();
