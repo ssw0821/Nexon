@@ -30,9 +30,8 @@ public class Test {
 	
 	@Before
 	  public static void setUp() throws Exception {
-		DesiredCapabilities cap = DesiredCapabilities.internetExplorer();
-		
-		WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), cap);
+		DesiredCapabilities cap = DesiredCapabilities.internetExplorer();		
+		WebDriver driver = new RemoteWebDriver(new URL("http://localhost:5555/wd/hub"), cap);
 //		System.setProperty("webdriver.ie.driver", "C:/Test/IEDriverServer.exe");	
 //		driver = new InternetExplorerDriver();
 	    driver.manage().window().maximize();
