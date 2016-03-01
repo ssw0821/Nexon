@@ -3,6 +3,7 @@ package com.cucumber.Nexon;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import java.net.URL;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -13,6 +14,8 @@ import org.openqa.selenium.NoSuchWindowException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -27,9 +30,13 @@ public class Test {
 	
 	@Before
 	  public static void setUp() throws Exception {
+		DesiredCapabilities cap = DesiredCapabilities.internetExplorer();
+		
+		WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), cap);
 		System.setProperty("webdriver.ie.driver", "C:/Test/IEDriverServer.exe");	
 		driver = new InternetExplorerDriver();
 	    driver.manage().window().maximize();
+	    
 	  }
 	
 	
