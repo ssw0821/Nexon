@@ -30,7 +30,7 @@ public class Test {
 	@Before
 	  public static void setUp() throws Exception {
 		DesiredCapabilities cap = DesiredCapabilities.internetExplorer();		
-		WebDriver driver = new RemoteWebDriver(new URL("http://localhost:8080/wd/hub"), cap);
+		driver = new RemoteWebDriver(new URL("http://localhost:8080/wd/hub"), cap);
 //		cap.setBrowserName("internetExplorer");
 //		cap.setVersion("10");
 		
